@@ -20,7 +20,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        dataBinding true
+    }
 }
+
+
+project.ext {
+
+    okHttpVersion = "3.10.0"
+    gsonVersion = "2.8.0"
+    retrofitAdapterVersion = "2.3.0"
+    retrofitVersion = "2.3.0"
+}
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -34,5 +48,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.retrofitAdapterVersion"
+
+
+    // OkHttp Logging Interceptor
+    implementation "com.squareup.okhttp3:okhttp:$project.okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$project.okHttpVersion"
+
+
+    implementation "com.google.code.gson:gson:2.8.5"
+
 
 }
