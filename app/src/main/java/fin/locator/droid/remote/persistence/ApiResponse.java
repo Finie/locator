@@ -2,22 +2,13 @@ package fin.locator.droid.remote.persistence;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.io.IOException;
-import java.util.Map;
 import java.util.regex.Pattern;
 
-import fin.locator.droid.remote.Resource;
 import retrofit2.Response;
 
-public class ApiResponse {
-
-    private static final Pattern LINK_PATTERN = Pattern
-            .compile("<([^>]*)>[\\s]*;[\\s]*rel=\"([a-zA-Z0-9]+)\"");
-    private static final Pattern PAGE_PATTERN = Pattern.compile("\\bpage=(\\d+)");
-    private static final String NEXT_LINK = "next";
+public class ApiResponse<T>{
 
     private static final String TAG = "ApiResponse";
 

@@ -27,8 +27,8 @@ public class Resource<T> {
 
 
 
-    public static <T> Resource<T> success(String msg, @Nullable T data){
-        return new Resource<>(SUCCESS,msg,data);
+    public static <T> Resource<T> success(@Nullable T data){
+        return new Resource<>(SUCCESS,null,data);
     }
 
     public static <T> Resource<T> error(String msg, @Nullable T data) {
