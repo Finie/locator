@@ -1,11 +1,9 @@
 package fin.locator.droid.remote;
 
-import android.os.Build;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.util.Objects;
 
 import static fin.locator.droid.remote.Status.ERROR;
 import static fin.locator.droid.remote.Status.LOADING;
@@ -59,21 +57,10 @@ public class Resource<T> {
         if (status != resource.status) {
             return false;
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            if (!Objects.equals(message, resource.message)) {
-                return false;
-            }
-        } else {
-            if (!message.equals(resource.message)) {
-                return false;
-            }
+        if (message != null ? !message.equals(resource.message) : resource.message != null) {
+            return false;
         }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            return Objects.equals(data, resource.data);
-        } else {
-            return data.equals(resource.data);
-        }
+        return data != null ? data.equals(resource.data) : resource.data == null;
     }
 
 

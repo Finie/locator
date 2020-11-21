@@ -32,11 +32,12 @@ android {
 
 
 project.ext {
-
+    multidex = "2.0.1"
     okHttpVersion = "3.10.0"
     gsonVersion = "2.8.0"
     retrofitAdapterVersion = "2.3.0"
     retrofitVersion = "2.3.0"
+    dagger_version = "2.27"
 }
 
 
@@ -44,11 +45,12 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-fragment:2.1.0'
-    implementation 'androidx.navigation:navigation-ui:2.1.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -68,6 +70,18 @@ dependencies {
 
 
     implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.android.support:multidex:$project.multidex"
+
+
+    //Dagger dependency
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+    implementation("com.google.guava:guava:29.0-jre")
+
+
+
 
 
 }
