@@ -1,4 +1,4 @@
-package fin.locator.droid.ui.details;
+package fin.locator.droid.ui.fragment.details;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

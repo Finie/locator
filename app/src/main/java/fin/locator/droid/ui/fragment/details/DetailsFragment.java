@@ -1,4 +1,4 @@
-package fin.locator.droid.ui.map;
+package fin.locator.droid.ui.fragment.details;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import fin.locator.droid.R;
 
-public class MapFragment extends Fragment {
+public class DetailsFragment extends Fragment {
 
-    private MapViewModel mapViewModel;
+    private DetailsViewModel detailsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mapViewModel =
-                ViewModelProviders.of(this).get(MapViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        mapViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        detailsViewModel =
+                ViewModelProviders.of(this).get(DetailsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
+        detailsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

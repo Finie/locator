@@ -13,22 +13,40 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
 
+import fin.locator.droid.BR;
 import fin.locator.droid.R;
 import fin.locator.droid.databinding.ActivityMainBinding;
+import fin.locator.droid.ui.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityViewModel> {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding mBinding;
+    private MainActivityViewModel mViewModel;
+
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public MainActivityViewModel getViewModel() {
+        return mViewModel;
+    }
+
+    @Override
+    public int getBindingVariable() {
+        return BR.mainActivityViewModel;
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
         setSupportActionBar(mBinding.mainAppBar.toolbar);
-
         mBinding.mainAppBar.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(mBinding.navView, navController);
 
+
+        /**
+         * TODO
+         * Get current fragment and toggle hide/show
+         * button here navController.getCurrentPosition()
+         */
+
+
+
     }
 
 
@@ -64,4 +91,7 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
 }
