@@ -16,7 +16,7 @@ import fin.locator.droid.R;
 import fin.locator.droid.ui.base.BaseFragment;
 import fin.locator.droid.ui.base.BaseViewModel;
 
-public class LocationFragment extends BaseFragment<> {
+public class LocationFragment extends BaseFragment {
 
     private LocationViewModel locationViewModel;
 
@@ -40,8 +40,9 @@ public class LocationFragment extends BaseFragment<> {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(, container, false);
+      View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
+
         locationViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -49,5 +50,7 @@ public class LocationFragment extends BaseFragment<> {
             }
         });
         return root;
+
+
     }
 }

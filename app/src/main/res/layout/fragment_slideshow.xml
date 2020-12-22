@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.location.LocationFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mLocationViewModel"
+            type="fin.locator.droid.ui.fragment.location.LocationViewModel" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragment.location.LocationFragment">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/text_slideshow"
@@ -19,5 +27,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_horizontal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
