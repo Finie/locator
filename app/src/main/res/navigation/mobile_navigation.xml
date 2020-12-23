@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_map"
-        android:name="fin.locator.droid.ui.map.MapFragment"
+        android:name="fin.locator.droid.ui.fragment.map.MapFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_details"
-        android:name="fin.locator.droid.ui.details.DetailsFragment"
+        android:name="fin.locator.droid.ui.fragment.details.DetailsFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_location"
-        android:name="fin.locator.droid.ui.location.LocationFragment"
+        android:name="fin.locator.droid.ui.fragment.location.LocationFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

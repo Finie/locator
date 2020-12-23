@@ -15,6 +15,7 @@ import javax.net.ssl.SSLContext;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
+import fin.locator.droid.di.component.DaggerAppComponent;
 
 public class LocatorApplication extends DaggerApplication {
 

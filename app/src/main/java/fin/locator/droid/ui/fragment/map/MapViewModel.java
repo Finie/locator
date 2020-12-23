@@ -1,16 +1,16 @@
-package fin.locator.droid.ui.location;
+package fin.locator.droid.ui.fragment.map;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class LocationViewModel extends ViewModel {
+public class MapViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public LocationViewModel() {
+    public MapViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is location fragment");
+        mText.setValue("This is map fragment");
     }
 
     public LiveData<String> getText() {
