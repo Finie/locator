@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="mLocationViewModel"
+            name="locationViewModel"
             type="fin.locator.droid.ui.fragment.location.LocationViewModel" />
 
     </data>
@@ -29,6 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_gravity="center_horizontal" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

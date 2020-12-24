@@ -7,11 +7,15 @@ import android.view.Menu;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.appcompat.app.AppCompatActivity;
+
+import javax.inject.Inject;
 
 import fin.locator.droid.BR;
 import fin.locator.droid.R;
@@ -24,6 +28,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
     private ActivityMainBinding mBinding;
     private MainActivityViewModel mViewModel;
 
+    @Inject
+    ViewModelProvider.Factory factory;
+
 
     @Override
     public int getLayoutId() {
@@ -32,6 +39,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,MainActivityV
 
     @Override
     public MainActivityViewModel getViewModel() {
+        mViewModel = ViewModelProviders.of(this,factory).get(MainActivityViewModel.class);
         return mViewModel;
     }
 
